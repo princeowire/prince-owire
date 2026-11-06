@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719 722" role="img" aria-label="Animated monogram loading indicator">
+  <title>Monogram loader</title>
+  <style>
+    .mark {
+      fill: #000;
+      fill-rule: evenodd;
+      stroke: currentColor;
+      stroke-width: 1.2;
+      stroke-linejoin: round;
+      stroke-linecap: square;
+      pathLength: 1000;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: trace 2.4s cubic-bezier(.65,0,.25,1) infinite;
+    }
+    @keyframes trace {
+      0% { stroke-dashoffset: 1000; fill-opacity: 0; }
+      58% { stroke-dashoffset: 0; fill-opacity: 0; }
+      72%, 88% { stroke-dashoffset: 0; fill-opacity: 1; }
+      100% { stroke-dashoffset: -1000; fill-opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mark { animation: none; stroke-dashoffset: 0; fill-opacity: 1; }
+    }
+  </style>
+  <path class="mark" d="M 168,17 167,79 287,79 316,83 328,87 342,95 354,108 361,125 358,127 337,124 162,124 162,650 229,650 229,179 231,177 318,177 355,182 357,186 345,204 324,218 298,224 270,224 252,221 251,494 311,494 311,288 313,286 339,283 365,275 393,259 416,238 418,240 420,253 419,285 414,305 405,325 395,339 373,359 351,371 329,378 329,464 458,651 562,652 563,168 501,168 500,597 374,420 376,416 399,406 418,394 438,378 453,362 467,342 477,323 487,288 489,257 487,234 483,216 478,202 468,184 444,159 444,137 440,110 433,90 427,79 416,64 393,44 368,31 341,23 293,17 Z M 0,0 718,1 Z"/>
+</svg>

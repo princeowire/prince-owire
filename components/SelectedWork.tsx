@@ -1,0 +1,12 @@
+import Reveal from './Reveal';
+import ProjectCard from './ProjectCard';
+import { projects } from '../lib/site-data';
+
+export default function SelectedWork() {
+  return <section id="work" className="relative bg-paper px-[var(--page-pad)] pb-[clamp(70px,9vw,120px)] pt-[clamp(76px,10vw,140px)] text-ink">
+    <div className="flex justify-between gap-5 border-b border-[rgba(9,10,11,.18)] pb-[15px] text-[8px] tracking-[.13em] text-[#657078] max-[760px]:text-[7px] max-[390px]:tracking-[.07em]"><span className="text-cyan">04 / SELECTED WORK</span><span>THOUGHT MADE TANGIBLE</span></div>
+    <div className="grid grid-cols-[1fr_.5fr] items-end gap-[6vw] py-[clamp(62px,8vw,105px)] pb-[70px] max-[760px]:flex max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-[25px] max-[760px]:py-16 max-[760px]:pb-[46px]"><Reveal><p className="mb-6 text-[9px] font-bold leading-[1.5] tracking-[.15em] text-[#667178]">A FEW THINGS I’VE BUILT</p><h2 className="m-0 font-display text-[clamp(90px,14vw,210px)] font-medium uppercase leading-[.82] tracking-[-.065em] max-[760px]:text-[clamp(90px,19vw,140px)]">SELECTED<br /><span className="text-[#c5cdd1]">WORK<span className="text-cyan">.</span></span></h2></Reveal><Reveal delay={0.15} className="flex items-end justify-between gap-5 pb-3 max-[760px]:w-full"><p className="m-0 max-w-[280px] text-[clamp(13px,1.2vw,16px)] leading-[1.75] text-[#657078]">A selection of interfaces, products, and experiments built through code and curiosity.</p><span className="font-display text-[43px] leading-none tracking-[-.05em] max-[760px]:text-[35px]">03 <i className="mt-2 block font-sans text-[8px] not-italic tracking-[.13em] text-[#6b777d]">PROJECTS</i></span></Reveal></div>
+    <div className="flex flex-col gap-[clamp(75px,10vw,145px)]">{projects.map((project, index) => <Reveal key={project.id} delay={index * 0.06}><ProjectCard project={project} index={index} featured={index === 0} /></Reveal>)}</div>
+    <div className="mt-[clamp(75px,10vw,140px)] flex items-center justify-between gap-5 border-t border-[rgba(9,10,11,.18)] pt-[22px] max-[760px]:items-start max-[760px]:flex-col"><span className="text-[8px] tracking-[.12em] text-[#758087]">MORE ITERATIONS ARE ALWAYS IN PROGRESS.</span><a className="font-display text-[clamp(19px,2.7vw,35px)] tracking-[-.025em] max-[760px]:text-[25px]" href="#contact">Have a project in mind? Let’s talk <span className="ml-[10px] text-cyan">↗</span></a></div>
+  </section>;
+}
